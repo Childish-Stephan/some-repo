@@ -1,0 +1,12 @@
+CharacterBody2D
+CanvasLayer
+Sprite2D
+CollisionShape2D
+Timer
+Area2D
+AnimatedSprite2D
+RemoteTransform2D
+Camera2D
+TileMap
+Button
+VBoxContainer

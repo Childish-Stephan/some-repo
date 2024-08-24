@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlgwfbassbssy"]
+
+[ext_resource type="Script" path="res://Script/Menus/mainMenu.gd" id="1_vx8hx"]
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vx8hx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="pressed_on_play_button"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="pressed_on_options_button"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="pressed_on_exit_button"]

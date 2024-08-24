@@ -1,0 +1,5 @@
+res://Levels/test_level.tscn
+res://Character/player.tscn
+res://Areas/killzone.tscn
+res://Menus/pause_menu.tscn
+res://Script/Character/player.gd
