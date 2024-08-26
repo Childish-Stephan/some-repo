@@ -95,9 +95,12 @@ func land():
 	animation_locked = true
 	
 func on_animation_ended():
-	if (["jump_loop", "jump_start", "jump_end"]).has(animated_sprite.animation):
+	# If the animation matches the following and has ended then, unlock the animation
+	if (["double_jump", "jump_start", "jump_end"]).has(animated_sprite.animation):
 		animation_locked = false
 		
 func double_jump():
 		velocity.y = double_jump_velocity
+		animated_sprite.play("double_jump")
 		has_double_jumped = true
+		animation_locked = true

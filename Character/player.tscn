@@ -1,10 +1,19 @@
-[gd_scene load_steps=36 format=3 uid="uid://cyo4ydl0slx8k"]
+[gd_scene load_steps=39 format=3 uid="uid://cyo4ydl0slx8k"]
 
 [ext_resource type="Texture2D" uid="uid://b5erndcxcb2pu" path="res://Art/Character/Idle/Idle-Sheet.png" id="1_0al64"]
 [ext_resource type="Script" path="res://Script/Character/player.gd" id="1_doeg7"]
+[ext_resource type="Texture2D" uid="uid://bmdm681ebr51s" path="res://Art/Character/Jump-Start/Jump-Start-Sheet.png" id="2_vkpvd"]
 [ext_resource type="Texture2D" uid="uid://dpk6o17ajgick" path="res://Art/Character/Jump-End/Jump-End-Sheet.png" id="3_gumwj"]
 [ext_resource type="Texture2D" uid="uid://cc4rsra268o5r" path="res://Art/Character/Jumlp-All/Jump-All-Sheet.png" id="4_dumrq"]
 [ext_resource type="Texture2D" uid="uid://bq2rlpdg321uj" path="res://Art/Character/Run/Run-Sheet.png" id="5_wjtgr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74btr"]
+atlas = ExtResource("2_vkpvd")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6bi8"]
+atlas = ExtResource("2_vkpvd")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hw8bx"]
 atlas = ExtResource("1_0al64")
@@ -120,6 +129,17 @@ region = Rect2(560, 0, 80, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_muwu8"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74btr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6bi8")
+}],
+"loop": false,
+"name": &"double_jump",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hw8bx")
@@ -239,7 +259,7 @@ script = ExtResource("1_doeg7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_muwu8")
-animation = &"idle"
+animation = &"double_jump"
 autoplay = "idle"
 centered = false
 offset = Vector2(-32, -40)
