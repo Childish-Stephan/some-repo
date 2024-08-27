@@ -18,6 +18,12 @@ var is_in_air : bool = false
 var direction : Vector2 = Vector2.ZERO
 
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_tree = $AnimationTree
+
+
+func _ready():
+	animation_tree.active = true
+	animation_tree.set("parameters/Move/blend_position", direction.x)
 
 func _physics_process(delta):
 	if not is_on_floor():
