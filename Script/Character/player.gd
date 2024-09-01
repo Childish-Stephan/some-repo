@@ -18,6 +18,12 @@ var is_in_air : bool = false
 var direction : Vector2 = Vector2.ZERO
 
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_tree = $AnimationTree
+
+
+func _ready():
+	animation_tree.active = true
+	animation_tree.set("parameters/Move/blend_position", direction.x)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -95,9 +101,12 @@ func land():
 	animation_locked = true
 	
 func on_animation_ended():
-	if (["jump_loop", "jump_start", "jump_end"]).has(animated_sprite.animation):
+	# If the animation matches the following and has ended then, unlock the animation
+	if (["double_jump", "jump_start", "jump_end"]).has(animated_sprite.animation):
 		animation_locked = false
 		
 func double_jump():
 		velocity.y = double_jump_velocity
+		animated_sprite.play("double_jump")
 		has_double_jumped = true
+		animation_locked = true

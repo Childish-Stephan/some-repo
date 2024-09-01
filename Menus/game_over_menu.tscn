@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqdo0jnujmqw"]
+
+[sub_resource type="GDScript" id="GDScript_a461b"]
+script/source = "extends Control
+
+func retry():
+	get_tree().reload_current_scene()
+
+func exit():
+	get_tree().quit()
+	
+func _on_retry_pressed():
+	retry()
+
+
+func _on_exit_pressed():
+	exit()
+"
+
+[node name="gameOverMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_a461b")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+
+[node name="RETRY" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "RETRY"
+
+[node name="EXIT" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/RETRY" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/EXIT" to="." method="_on_exit_pressed"]
