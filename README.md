@@ -10,3 +10,7 @@ This is a singleplayer platformer game in Godot. This was intended to be a begin
   * Add "Credits" to main menu
   * Add debug version
   * ~~Publish inital build onto Itch.io~~
+
+
+# Download
+Download the game on itchio [alpha version indev 0.02]: https://tarckane.itch.io/test-game
