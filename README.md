@@ -10,6 +10,7 @@ This is a singleplayer platformer game in Godot. This was intended to be a begin
   * ~~Add "Credits" to main menu~~
   * Add debug version
   * ~~Publish inital build onto Itch.io~~
+  * ~~Fix issue where pause menu follows player's camera insteading being static~~
 
 
 # Download
