@@ -7,7 +7,7 @@ This is a singleplayer platformer game in Godot. This was intended to be a begin
   * Completely replace "Animated Sprite2D" node with "Animation Player" and "Animation Tree" node
   * Implement health and damage into the game
   * Add a "Game Over" menu when dying
-  * Add "Credits" to main menu
+  * ~~Add "Credits" to main menu~~
   * Add debug version
   * ~~Publish inital build onto Itch.io~~
 
